@@ -32,7 +32,7 @@ order by 1,2
 -- Total Cases vs Population
 -- Shows what percentage of population infected with Covid
 
-Select Location, date, Population, total_cases,  (total_cases/population)*100 as PercentPopulationInfected
+Select Location, date, total_cases, Population, (total_cases/population)*100 as PercentPopulationInfected
 From PortfolioProject..CovidDeaths
 --Where location like '%states%'
 order by 1,2
@@ -157,5 +157,6 @@ Join PortfolioProject..CovidVaccinations vac
 	On dea.location = vac.location
 	and dea.date = vac.date
 where dea.continent is not null 
+
 
 
